@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MB Group — Megapolis Building Group | Алматы</title>
+  <meta name="description" content="Megapolis Building Group — земляные работы, монолит, металлоконструкции, сэндвич-панели, промышленные полы, кровля, инженерные сети в Алматы."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      /* ─── Цвета MB Group ───────────────────────────── */
+      --navy:      #0B1E3F;   /* основной тёмно-синий     */
+      --navy2:     #0F2550;   /* чуть светлее             */
+      --navy3:     #142D5F;   /* карточки                 */
+      --navy4:     #1A376E;   /* бордер / hover           */
+      --gold:      #C9A84C;   /* золотой акцент           */
+      --gold2:     #B08E38;
+      --text:      #EEF2FF;   /* почти белый с синевой    */
+      --muted:     #7A91B8;
+      --border:    #1E3560;
+      --light:     #F4F7FF;
+    }
+    ,::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{background:var(--navy);color:var(--text);font-family:'Montserrat',sans-serif;font-weight:400;line-height:1.65;overflow-x:hidden}
+
+    /* ══════════ НАВИГАЦИЯ ══════════ */
+    nav{position:fixed;top:0;left:0;right:0;z-index:300;height:70px;
+        background:rgba(11,30,63,0.97);backdrop-filter:blur(16px);
+        border-bottom:1px solid var(--border);
+        display:flex;align-items:center;padding:0 40px;gap:36px}
+    .logo{text-decoration:none;display:flex;align-items:center;gap:12px;flex-shrink:0}
+    .logo-mark{
+      width:42px;height:42px;background:var(--gold);
+      border-radius:4px;display:flex;align-items:center;justify-content:center;
+      font-family:'Montserrat',sans-serif;font-size:13px;font-weight:900;
+      color:var(--navy);letter-spacing:0;line-height:1;flex-shrink:0;
+      position:relative;overflow:hidden
+    }
+    .logo-mark::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,0.2),transparent)}
+    .logo-text{display:flex;flex-direction:column;gap:1px}
+    .logo-text-main{font-size:15px;font-weight:800;color:var(--text);letter-spacing:2px;line-height:1}
+    .logo-text-sub{font-size:9px;font-weight:500;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase}
+    .nav-links{display:flex;gap:28px;list-style:none;flex:1}
+    .nav-links a{color:var(--muted);text-decoration:none;font-size:12px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;transition:color .2s}
+    .nav-links a:hover{color:var(--gold)}
+    .nav-cta{background:var(--gold);color:var(--navy);text-decoration:none;font-size:12px;font-weight:800;letter-spacing:.5px;padding:10px 24px;border-radius:4px;white-space:nowrap;transition:background .2s;flex-shrink:0}
+    .nav-cta:hover{background:var(--gold2)}
+    .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;margin-left:auto}
+    .burger span{display:block;width:22px;height:2px;background:var(--text)}
+
+    /* ══════════ ГЕРОЙ ══════════ */
+    #hero{min-height:100vh;display:flex;align-items:center;padding:120px 40px 80px;position:relative;overflow:hidden}
+    .hero-bg{position:absolute;inset:0;
+      background:
+        radial-gradient(ellipse 60% 60% at 80% 40%, rgba(201,168,76,0.07) 0%, transparent 65%),
+        radial-gradient(ellipse 40% 40% at 10% 80%, rgba(201,168,76,0.04) 0%, transparent 60%),
+        linear-gradient(180deg,#0B1E3F 0%,#0A1A36 100%)}
+    .hero-pattern{position:absolute;inset:0;opacity:.03;
+      background-image:linear-gradient(var(--gold) 1px,transparent 1px),linear-gradient(90deg,var(--gold) 1px,transparent 1px);
+      background-size:80px 80px}
+    .hero-bar{position:absolute;left:0;top:15%;bottom:15%;width:3px;background:linear-gradient(to bottom,transparent,var(--gold),transparent);opacity:.5}
+    .hero-inner{position:relative;max-width:1060px;margin:0 auto;width:100%;animation:fadeUp .8s ease both}
+    .eyebrow{display:flex;align-items:center;gap:14px;margin-bottom:30px}
+    .eyebrow-dash{width:48px;height:2px;background:var(--gold)}
+    .eyebrow-txt{font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--gold)}
+    h1{font-size:clamp(52px,8.5vw,100px);font-weight:900;line-height:.95;letter-spacing:-1px;margin-bottom:30px}
+    h1 em{color:var(--gold);font-style:normal}
+    .hero-sub{font-size:16px;color:var(--muted);font-weight:400;max-width:560px;line-height:1.9;margin-bottom:48px}
+    .hero-sub b{color:var(--text);font-weight:600}
+    .cta-row{display:flex;gap:14px;flex-wrap:wrap}
+    .btn{display:inline-block;text-decoration:none;font-family:'Montserrat',sans-serif;font-size:13px;font-weight:700;letter-spacing:.5px;padding:15px 36px;border-radius:4px;cursor:pointer;border:none;transition:all .2s}
+    .btn-gold{background:var(--gold);color:var(--navy)}
+    .btn-gold:hover{background:var(--gold2);transform:translateY(-2px)}
+    .btn-outline{background:transparent;color:var(--text);border:1.5px solid var(--border)}
+    .btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+    .hero-counters{display:flex;gap:0;margin-top:72px;flex-wrap:wrap}
+    .counter{padding:0 44px 0 0;border-right:1px solid var(--border);margin-right:44px}
+    .counter:last-child{border-right:none}
+    .counter-n{font-size:44px;font-weight:900;color:var(--gold);line-height:1;letter-spacing:-1px}
+    .counter-l{font-size:11px;color:var(--muted);margin-top:4px;font-weight:500;letter-spacing:.3px}
+
+    /* ══════════ ОБЩИЕ СЕКЦИИ ══════════ */
+    section{padding:96px 40px}
+    .inner{max-width:1060px;margin:0 auto}
+    .s-label{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+    .s-dash{width:28px;height:2px;background:var(--gold)}
+    .s-tag{font-size:10px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--gold)}
+    h2{font-size:clamp(36px,4.5vw,54px);font-weight:900;line-height:1;letter-spacing:-0.5px;margin-bottom:14px}
+    .s-desc{color:var(--muted);font-size:15px;font-weight:400;max-width:560px;line-height:1.85;margin-bottom:56px}
+
+    /* ══════════ УСЛУГИ ══════════ */
+    #services{background:var(--navy2)}
+    .svc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:2px;border:2px solid var(--border);border-radius:10px;overflow:hidden}
+    .svc{background:var(--navy3);padding:32px 28px;transition:background .25s;position:relative;overflow:hidden}
+    .svc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transition:transform .3s;transform-origin:left}
+    .svc:hover{background:var(--navy4)}
+    .svc:hover::after{transform:scaleX(1)}
+    .svc-num{font-size:11px;font-weight:700;letter-spacing:3px;color:rgba(201,168,76,.35);margin-bottom:16px}
+    .svc-icon{font-size:28px;margin-bottom:14px}
+    .svc-t{font-size:16px;font-weight:800;color:var(--text);margin-bottom:10px;letter-spacing:.3px}
+    .svc-d{font-size:13px;color:var(--muted);line-height:1.75}
+    .svc-list{margin-top:12px;list-style:none}
+    .svc-list li{font-size:12px;color:#9DAECB;padding:3px 0;display:flex;align-items:center;gap:6px}
+    .svc-list li::before{content:'';width:4px;height:4px;background:var(--gold);border-radius:50%;flex-shrink:0}
+
+    /* ══════════ КАК РАБОТАЕМ ══════════ */
+    #process{background:var(--navy)}
+    .steps-track{position:relative;display:flex;flex-direction:column;gap:0}
+    .step{display:grid;grid-template-columns:80px 1fr;gap:24px;padding:28px 0;border-bottom:1px solid var(--border);align-items:start}
+    .step:last-child{border-bottom:none}
+    .step-num{font-size:52px;font-weight:900;color:rgba(201,168,76,.12);line-height:1;padding-top:4px}
+    .step-t{font-size:16px;font-weight:800;color:var(--text);margin-bottom:6px}
+    .step-d{font-size:13px;color:var(--muted);line-height:1.8}
+
+    /* ══════════ ПОРТФОЛИО ══════════ */
+    #portfolio{background:var(--navy2)}
+    .portfolio-filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:36px}
+    .pf-btn{background:transparent;border:1.5px solid var(--border);color:var(--muted);font-family:'Montserrat',sans-serif;font-size:12px;font-weight:600;letter-spacing:.5px;padding:8px 18px;border-radius:4px;cursor:pointer;transition:all .2s}
+    .pf-btn.active,.pf-btn:hover{border-color:var(--gold);color:var(--gold);background:rgba(201,168,76,.07)}
+    /* Карусель */
+    .carousel-wrap{position:relative;overflow:hidden;border-radius:10px;border:1px solid var(--border)}
+    .carousel-track{display:flex;transition:transform .5s cubic-bezier(.4,0,.2,1)}
+    .carousel-slide{min-width:100%;display:grid;grid-template-columns:1fr 1fr 1fr;gap:3px}
+    @media(max-width:900px){.carousel-slide{grid-template-columns:1fr 1fr}}
+    @media(max-width:600px){.carousel-slide{grid-template-columns:1fr}}
+    .photo-card{position:relative;aspect-ratio:4/3;background:var(--navy3);overflow:hidden;cursor:pointer}
+    .photo-card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
+    .photo-card:hover img{transform:scale(1.05)}
+    /* Placeholder когда нет фото */
+    .photo-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:linear-gradient(135deg,var(--navy3),var(--navy4))}
+    .photo-placeholder .ph-icon{font-size:36px;opacity:.4}
+    .photo-placeholder .ph-label{font-size:11px;color:var(--muted);font-weight:600;letter-spacing:1px;text-align:center;padding:0 16px;line-height:1.5}
+    .photo-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(11,30,63,.9) 0%,transparent 50%);opacity:0;transition:opacity .3s;display:flex;align-items:flex-end;padding:16px}
+    .photo-card:hover .photo-overlay{opacity:1}
+    .photo-meta{font-size:12px;font-weight:700;color:var(--text)}
+    .photo-meta span{display:block;font-size:10px;color:var(--gold);font-weight:600;letter-spacing:.5px;margin-bottom:2px}
+    .carousel-nav{display:flex;align-items:center;justify-content:space-between;margin-top:20px}
+    .carousel-arrows{display:flex;gap:10px}
+    .carr-btn{width:44px;height:44px;border:1.5px solid var(--border);background:transparent;border-radius:4px;color:var(--text);font-size:18px;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center}
+    .carr-btn:hover{border-color:var(--gold);color:var(--gold)}
+    .carousel-dots{display:flex;gap:8px;align-items:center}
+    .dot{width:8px;height:8px;border-radius:50%;background:var(--border);cursor:pointer;transition:all .2s}
+    .dot.active{background:var(--gold);width:24px;border-radius:4px}
+    /* Заметка для владельца */
+    .portfolio-note{margin-top:20px;background:rgba(201,168,76,.07);border:1px solid rgba(201,168,76,.2);border-radius:8px;padding:14px 18px;font-size:12px;color:var(--muted);line-height:1.7}
+    .portfolio-note b{color:var(--gold)}
+
+    /* ══════════ ЗАЯВКА / РАСЧЁТ ══════════ */
+    #calc{background:var(--navy)}
+    .calc-wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:60px;align-items:start}
+    .calc-left h2{margin-bottom:10px}
+    .calc-left .s-desc{margin-bottom:0}
+    .calc-benefits{display:flex;flex-direction:column;gap:14px;margin-top:36px}
+    .cb{display:flex;align-items:flex-start;gap:14px}
+    .cb-icon{width:40px;height:40px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.25);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+    .cb-t{font-size:14px;font-weight:700;color:var(--text);margin-bottom:3px}
+    .cb-d{font-size:12px;color:var(--muted);line-height:1.65}
+    /* форма */
+    .calc-form{background:var(--navy2);border:1px solid var(--border);border-radius:12px;padding:36px 32px}
+    .form-title{font-size:17px;font-weight:800;color:var(--text);margin-bottom:6px}
+    .form-sub{font-size:13px;color:var(--muted);margin-bottom:28px}
+    .fg{margin-bottom:14px}
+    .fg label{display:block;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
+    .fg input,.fg select,.fg textarea{
+      width:100%;background:var(--navy3);border:1.5px solid var(--border);
+      border-radius:5px;color:var(--text);font-family:'Montserrat',sans-serif;
+      font-size:13px;padding:13px 15px;outline:none;transition:border-color .2s;font-weight:500}
+    .fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--gold)}
+    .fg input::placeholder,.fg textarea::placeholder{color:var(--border);font-weight:400}
+    .fg select option{background:var(--navy3)}
+    .fg textarea{resize:vertical;min-height:88px}
+    .fg-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .submit-btn{width:100%;background:var(--gold);color:var(--navy);border:none;border-radius:5px;font-family:'Montserrat',sans-serif;font-size:14px;font-weight:800;letter-spacing:.3px;padding:16px;cursor:pointer;transition:background .2s;margin-top:4px}
+    .submit-btn:hover{background:var(--gold2)}
+    .form-legal{font-size:11px;color:#3D5580;margin-top:10px;line-height:1.6;text-align:center}
+    #form-ok{display:none;background:rgba(22,163,74,.12);border:1px solid rgba(22,163,74,.35);border-radius:7px;padding:14px;text-align:center;color:#4ade80;font-size:13px;font-weight:600;margin-top:12px}
+
+    /* ══════════ ПОЧЕМУ МЫ ══════════ */
+    #why{background:var(--navy2)}
+    .why-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+    .wc{background:var(--navy3);border:1px solid var(--border);border-radius:8px;padding:26px;transition:border-color .2s}
+    .wc:hover{border-color:rgba(201,168,76,.4)}
+    .wc-icon{font-size:26px;margin-bottom:14px}
+    .wc-t{font-size:14px;font-weight:800;color:var(--text);margin-bottom:6px}
+    .wc-d{font-size:13px;color:var(--muted);line-height:1.7}
+
+    /* ══════════ КОНТАКТЫ ВНИЗУ ══════════ */
+    #contacts{background:var(--navy)}
+    .contacts-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px}
+    .cc{background:var(--navy2);border:1px solid var(--border);border-radius:8px;padding:28px 24px}
+    .cc-label{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+    .cc-row{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--border)}
+    .cc-row:last-child{border-bottom:none}
+    .cc-ico{font-size:16px;width:32px;text-align:center;flex-shrink:0}
+    .cc-lbl{font-size:10px;color:var(--muted);margin-bottom:2px}
+    .cc-val{font-size:13px;font-weight:700;color:var(--text)}
+    .cc-val a{color:var(--text);text-decoration:none;transition:color .2s}
+    .cc-val a:hover{color:var(--gold)}
+
+    /* ══════════ ФУТЕР ══════════ */
+    footer{background:var(--navy2);border-top:1px solid var(--border);padding:32px 40px}
+    .footer-inner{max-width:1060px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+    .footer-logo-text{font-size:14px;font-weight:800;letter-spacing:2px;color:var(--text)}
+    .footer-logo-text span{color:var(--gold)}
+    .footer-sub{font-size:10px;color:var(--muted);letter-spacing:.5px;margin-top:2px}
+    .f-links{display:flex;gap:20px;flex-wrap:wrap}
+    .f-links a{color:var(--muted);text-decoration:none;font-size:11px;font-weight:600;transition:color .2s}
+    .f-links a:hover{color:var(--gold)}
+    .f-copy{font-size:11px;color:#2A3F6A;width:100%}
+
+    /* ══════════ АНИМАЦИИ ══════════ */
+    @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+    .reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+    .reveal.v{opacity:1;transform:translateY(0)}
+
+    /* ══════════ ЛАЙТБОКС ══════════ */
+    #lightbox{display:none;position:fixed;inset:0;background:rgba(5,10,25,.95);z-index:999;align-items:center;justify-content:center}
+    #lightbox.open{display:flex}
+    #lb-img{max-width:90vw;max-height:85vh;border-radius:6px;object-fit:contain}
+    #lb-close{position:absolute;top:24px;right:32px;background:none;border:none;color:#fff;font-size:32px;cursor:pointer;line-height:1}
+    #lb-prev,#lb-next{position:absolute;top:50%;transform:translateY(-50%);background:rgba(201,168,76,.15);border:1px solid var(--gold);color:var(--gold);font-size:22px;width:50px;height:50px;border-radius:4px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s}
+    #lb-prev{left:24px}#lb-next{right:24px}
+    #lb-prev:hover,#lb-next:hover{background:rgba(201,168,76,.3)}
+
+    /* ══════════ МОБИЛЬНАЯ ══════════ */
+    @media(max-width:768px){
+      nav{padding:0 20px}
+      .nav-links,.nav-cta{display:none}
+      .burger{display:flex}
+      .nav-links.open{display:flex;flex-direction:column;gap:16px;position:fixed;top:70px;left:0;right:0;background:var(--navy2);padding:24px;border-bottom:1px solid var(--border);z-index:299}
+      section{padding:64px 20px}
+      #hero{padding:110px 20px 64px}
+      .calc-wrap{grid-template-columns:1fr}
+      .contacts-grid{grid-template-columns:1fr}
+      .hero-counters{gap:0}
+      .counter{padding:12px 24px 12px 0;margin-right:24px}
+      .fg-row{grid-template-columns:1fr}
+      .footer-inner{flex-direction:column;align-items:flex-start}
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════ НАВИГАЦИЯ ═══════════════ -->
+<nav>
+  <a href="#hero" class="logo">
+    <div class="logo-mark">MB</div>
+    <div class="logo-text">
+      <span class="logo-text-main">MB GROUP</span>
+      <span class="logo-text-sub">Megapolis Building</span>
+    </div>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#services">Услуги</a></li>
+    <li><a href="#process">Процесс</a></li>
+    <li><a href="#portfolio">Проекты</a></li>
+    <li><a href="#why">О нас</a></li>
+    <li><a href="#contacts">Контакты</a></li>
+  </ul>
+  <a href="#calc" class="nav-cta">Получить расчёт</a>
+  <div class="burger" id="burger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- ═══════════════ ГЕРОЙ ═══════════════ -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-pattern"></div>
+  <div class="hero-bar"></div>
+  <div class="hero-inner">
+    <div class="eyebrow">
+      <div class="eyebrow-dash"></div>
+      <span class="eyebrow-txt">Алматы · Строительный подрядчик полного цикла</span>
+    </div>
+    <h1>Строим.<br/><em>Сдаём в срок.</em><br/>Берём ответственность.</h1>
+    <p class="hero-sub">
+      <b>Megapolis Building Group</b> — земляные работы, монолит,
+      металлоконструкции, сэндвич-панели, промышленные полы,
+      кровля и инженерные сети.
+    </p>
+    <div class="cta-row">
+      <a href="#calc" class="btn btn-gold">Получить расчёт</a>
+      <a href="#portfolio" class="btn btn-outline">Наши проекты</a>
+    </div>
+    <div class="hero-counters">
+      <div class="counter">
+        <!-- ✏️ Замените на реальные цифры -->
+        <div class="counter-n">7+</div>
+        <div class="counter-l">видов работ</div>
+      </div>
+      <div class="counter">
+        <div class="counter-n">Алматы</div>
+        <div class="counter-l">город работ</div>
+      </div>
+      <div class="counter">
+        <div class="counter-n">КС-2</div>
+        <div class="counter-l">официальные акты</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ УСЛУГИ ═══════════════ -->
+<section id="services">
+  <div class="inner">
+    <div class="s-label reveal"><div class="s-dash"></div><span class="s-tag">Что мы делаем</span></div>
+    <h2 class="reveal">Наши услуги</h2>
+    <p class="s-desc reveal">Один подрядчик — весь объект. От котлована до инженерных сетей.</p>
+    <div class="svc-grid">
+      <div class="svc reveal">
+        <div class="svc-num">01</div>
+        <div class="svc-icon">⛏️</div>
+        <div class="svc-t">Земляные работы</div>
+        <p class="svc-d">Разработка котлованов и траншей любых объёмов. Вертикальная планировка, дренаж, обратная засыпка.</p>
+        <ul class="svc-list">
+          <li>Разработка котлована</li>
+          <li>Планировка и водоотвод</li>
+          <li>Обратная засыпка</li>
+        </ul>
+      </div>
+      <div class="svc reveal">
+        <div class="svc-num">02</div>
+        <div class="svc-icon">🏗️</div>
+        <div class="svc-t">Монолитные работы</div>
+        <p class="svc-d">Фундаменты, плиты, колонны, перекрытия и монолитные каркасы зданий. Контроль качества бетона.</p>
+        <ul class="svc-list">
+          <li>Фундамент и плиты</li>
+          <li>Монолитный каркас</li>
+          <li>Перекрытия и колонны</li>
+        </ul>
+      </div>
+      <div class="svc reveal">
+        <div class="svc-num">03</div>
+        <div class="svc-icon">🔩</div>
+        <div class="svc-t">Металлоконструкции</div>
+        <p class="svc-d">Проектирование и монтаж металлических каркасов, ферм и балок. От КМ-документации до готового каркаса.</p>
+        <ul class="svc-list">
+          <li>Проектирование КМ</li>
+          <li>Изготовление и монтаж</li>
+          <li>Фермы и колонны</li>
+        </ul>
+      </div>
+      <div class="svc reveal">
+        <div class="svc-num">04</div>
+        <div class="svc-icon">🧱</div>
+        <div class="svc-t">Сэндвич-панели</div>
+        <p class="svc-d">Проектирование и монтаж ограждающих конструкций из сэндвич-панелей для промышленных и административных зданий.</p>
+        <ul class="svc-list">
+          <li>Проектирование</li>
+          <li>Фасадные панели</li>
+          <li>Кровельные панели</li>
+        </ul>
+      </div>
+      <div class="svc reveal">
+        <div class="svc-num">05</div>
+        <div class="svc-icon">🏭</div>
+        <div class="svc-t">Промышленные полы</div>
+        <p class="svc-d">Топпинговые полы с упрочнённым верхним слоем для складов, производств и логистических центров.</p>
+        <ul class="svc-list">
+          <li>Топпинг-полы</li>
+          <li>Склады и производства</li>
+          <li>Высокие нагрузки</li>
+        </ul>
+      </div>
+      <div class="svc reveal">
+        <div class="svc-num">06</div>
+        <div class="svc-icon">🏠</div>
+        <div class="svc-t">Кровельные работы</div>
+        <p class="svc-d">Устройство кровли всех типов: профнастил, мягкая кровля, сэндвич-кровля. Монтаж водостока.</p>
+        <ul class="svc-list">
+          <li>Профнастил и металлочерепица</li>
+          <li>Мягкая кровля</li>
+          <li>Водосточные системы</li>
+        </ul>
+      </div>
+      <div class="svc reveal">
+        <div class="svc-num">07</div>
+        <div class="svc-icon">⚡</div>
+        <div class="svc-t">Инженерные сети</div>
+        <p class="svc-d">Проектирование и монтаж инженерных систем здания: электрика, ВК, отопление, вентиляция.</p>
+        <ul class="svc-list">
+          <li>Электроснабжение</li>
+          <li>Водоснабжение и канализация</li>
+          <li>Отопление и вентиляция</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ КАК РАБОТАЕМ ═══════════════ -->
+<section id="process">
+  <div class="inner">
+    <div class="s-label reveal"><div class="s-dash"></div><span class="s-tag">Процесс</span></div>
+    <h2 class="reveal">Как мы работаем</h2>
+    <p class="s-desc reveal">От первого звонка до подписанных актов — прозрачно и без неожиданностей.</p>
+    <div class="steps-track">
+      <div class="step reveal">
+        <div class="step-num">01</div>
+        <div><div class="step-t">Заявка и выезд на объект</div><p class="step-d">Принимаем заявку, связываемся в течение 2 часов. Бесплатный выезд на объект — оцениваем условия и объёмы без обязательств.</p></div>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">02</div>
+        <div><div class="step-t">Расчёт и коммерческое предложение</div><p class="step-d">Детальная смета за 1–3 дня. Прозрачно: материалы, работа и техника — всё отдельными строками. Фиксируем цену.</p></div>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">03</div>
+        <div><div class="step-t">Договор</div><p class="step-d">Работаем по договору с чётко прописанными сроками, объёмами и стоимостью. Никаких устных договорённостей.</p></div>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">04</div>
+        <div><div class="step-t">Выполнение работ</div><p class="step-d">Еженедельные отчёты с фотофиксацией. Вы видите реальный прогресс. Исполнительная документация на каждый этап.</p></div>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">05</div>
+        <div><div class="step-t">Сдача и акты</div><p class="step-d">Сдаём в оговорённые сроки. Подписываем акты КС-2, КС-3. Гарантия на все виды работ — замечания устраняем за свой счёт.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ ПОРТФОЛИО ═══════════════ -->
+<section id="portfolio">
+  <div class="inner">
+    <div class="s-label reveal"><div class="s-dash"></div><span class="s-tag">Выполненные работы</span></div>
+    <h2 class="reveal">Наши проекты</h2>
+    <p class="s-desc reveal">Реальные объекты — нажмите на фото чтобы увеличить, используйте стрелки для листания.</p>
+
+    <!-- Фильтры -->
+    <div class="portfolio-filters reveal">
+      <button class="pf-btn active" onclick="filterPortfolio('all',this)">Все работы</button>
+      <button class="pf-btn" onclick="filterPortfolio('earth',this)">Земляные работы</button>
+      <button class="pf-btn" onclick="filterPortfolio('mono',this)">Монолит</button>
+      <button class="pf-btn" onclick="filterPortfolio('metal',this)">Металлоконструкции</button>
+      <button class="pf-btn" onclick="filterPortfolio('floor',this)">Полы</button>
+      <button class="pf-btn" onclick="filterPortfolio('roof',this)">Кровля</button>
+    </div>
+
+    <div class="carousel-wrap reveal">
+      <div class="carousel-track" id="carouselTrack">
+
+        <!-- ═══ СЛАЙД 1 ═══
+             ✏️ КАК ДОБАВИТЬ ФОТО:
+             Замените <div class="photo-placeholder">...</div>
+             на <img src="ваше-фото.jpg" alt="описание">
+             Все 3 фото в одном слайде — листаются стрелками
+        ═══════════════════════════════════════ -->
+        <div class="carousel-slide" id="slide-0">
+
+          <div class="photo-card" data-cat="mono" onclick="openLightbox(0)">
+            <div class="photo-placeholder">
+              <span class="ph-icon">📸</span>
+              <span class="ph-label">Добавьте фото<br/>котлована</span>
+            </div>
+            <div class="photo-overlay">
+              <div class="photo-meta"><span>Земляные работы</span>Разработка котлована</div>
+            </div>
+          </div>
+
+          <div class="photo-card" data-cat="mono" onclick="openLightbox(1)">
+            <div class="photo-placeholder">
+              <span class="ph-icon">📸</span>
+              <span class="ph-label">Добавьте фото<br/>армирования</span>
+            </div>
+            <div class="photo-overlay">
+              <div class="photo-meta"><span>Монолитные работы</span>Армирование плиты</div>
+            </div>
+          </div>
+
+          <div class="photo-card" data-cat="mono" onclick="openLightbox(2)">
+            <div class="photo-placeholder">
+              <span class="ph-icon">📸</span>
+              <span class="ph-label">Добавьте фото<br/>заливки бетона</span>
+            </div>
+            <div class="photo-overlay">
+              <div class="photo-meta"><span>Монолитные работы</span>Заливка перекрытия</div>
+            </div>
+          </div>
+
+        </div><!-- /slide-0 -->
+
+        <div class="carousel-slide" id="slide-1">
+
+          <div class="photo-card" data-cat="metal" onclick="openLightbox(3)">
+            <div class="photo-placeholder">
+              <span class="ph-icon">📸</span>
+              <span class="ph-label">Добавьте фото<br/>металлоконструкций</span>
+            </div>
+            <div class="photo-overlay">
+              <div class="photo-meta"><span>Металлоконструкции</span>Монтаж каркаса</div>
+            </div>
+          </div>
+
+          <div class="photo-card" data-cat="roof" onclick="openLightbox(4)">
+            <div class="photo-placeholder">
+              <span class="ph-icon">📸</span>
+              <span class="ph-label">Добавьте фото<br/>кровельных работ</span>
+            </div>
+            <div class="photo-overlay">
+              <div class="photo-meta"><span>Кровля</span>Монтаж кровли</div>
+            </div>
+          </div>
+
+          <div class="photo-card" data-cat="floor" onclick="openLightbox(5)">
+            <div class="photo-placeholder">
+              <span class="ph-icon">📸</span>
+              <span class="ph-label">Добавьте фото<br/>промышленных полов</span>
+            </div>
+            <div class="photo-overlay">
+              <div class="photo-meta"><span>Промышленные полы</span>Топпинг-пол</div>
+            </div>
+          </div>
+
+        </div><!-- /slide-1 -->
+
+        <div class="carousel-slide" id="slide-2">
+
+          <div class="photo-card" data-cat="earth" onclick="openLightbox(6)">
+            <div class="photo-placeholder">
+              <span class="ph-icon">📸</span>
+              <span class="ph-label">Добавьте фото<br/>земляных работ</span>
+            </div>
+            <div class="photo-overlay">
+              <div class="photo-meta"><span>Земляные работы</span>Котлован</div>
+            </div>
+          </div>
+
+          <div class="photo-card" data-cat="metal" onclick="openLightbox(7)">
+            <div class="photo-placeholder">
+              <span class="ph-icon">📸</span>
+              <span class="ph-label">Добавьте фото<br/>сэндвич-панелей</span>
+            </div>
+            <div class="photo-overlay">
+              <div class="photo-meta"><span>Сэндвич-панели</span>Монтаж фасада</div>
+            </div>
+          </div>
+
+          <div class="photo-card" data-cat="mono" onclick="openLightbox(8)">
+            <div class="photo-placeholder">
+              <span class="ph-icon">📸</span>
+              <span class="ph-label">Добавьте фото<br/>готового объекта</span>
+            </div>
+            <div class="photo-overlay">
+              <div class="photo-meta"><span>Готовый объект</span>Административное здание</div>
+            </div>
+          </div>
+
+        </div><!-- /slide-2 -->
+
+      </div><!-- /track -->
+    </div><!-- /wrap -->
+
+    <div class="carousel-nav">
+      <div class="carousel-arrows">
+        <button class="carr-btn" onclick="prevSlide()">&#8592;</button>
+        <button class="carr-btn" onclick="nextSlide()">&#8594;</button>
+      </div>
+      <div class="carousel-dots" id="dots">
+        <div class="dot active" onclick="goSlide(0)"></div>
+        <div class="dot" onclick="goSlide(1)"></div>
+        <div class="dot" onclick="goSlide(2)"></div>
+      </div>
+    </div>
+
+    <!-- Инструкция для владельца -->
+    <div class="portfolio-note">
+      <b>✏️ Как добавить ваши фотографии:</b> Откройте файл в текстовом редакторе, найдите строки
+      <code style="background:rgba(255,255,255,.07);padding:1px 6px;border-radius:3px">photo-placeholder</code> и замените их на
+      <code style="background:rgba(255,255,255,.07);padding:1px 6px;border-radius:3px">&lt;img src="ваше-фото.jpg" alt="описание"&gt;</code>.
+      Фото должны лежать рядом с файлом index.html. Можно добавить сколько угодно слайдов.
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ ПОЛУЧИТЬ РАСЧЁТ ═══════════════ -->
+<section id="calc">
+  <div class="inner">
+    <div class="calc-wrap">
+      <div class="calc-left">
+        <div class="s-label reveal"><div class="s-dash"></div><span class="s-tag">Заявка</span></div>
+        <h2 class="reveal">Получить расчёт</h2>
+        <p class="s-desc reveal" style="margin-bottom:0">Выезд на объект и предварительный расчёт — бесплатно. Перезваниваем в течение 2 часов.</p>
+        <div class="calc-benefits reveal">
+          <div class="cb">
+            <div class="cb-icon">🚗</div>
+            <div><div class="cb-t">Бесплатный выезд</div><p class="cb-d">Приедем на объект, оценим условия и объёмы без каких-либо обязательств с вашей стороны.</p></div>
+          </div>
+          <div class="cb">
+            <div class="cb-icon">📋</div>
+            <div><div class="cb-t">Смета за 1–3 дня</div><p class="cb-d">Детальный расчёт по каждой позиции. Никаких размытых цифр — всё прозрачно.</p></div>
+          </div>
+          <div class="cb">
+            <div class="cb-icon">🔒</div>
+            <div><div class="cb-t">Цена фиксируется в договоре</div><p class="cb-d">Стоимость, прописанная в договоре, не меняется в ходе работ без вашего согласия.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="calc-form reveal">
+        <div class="form-title">Оставить заявку</div>
+        <p class="form-sub">Заполните форму — Аслан свяжется с вами в ближайшее время.</p>
+        <div class="fg-row">
+          <div class="fg"><label>Имя *</label><input type="text" id="f-name" placeholder="Ваше имя"/></div>
+          <div class="fg"><label>Телефон *</label><input type="tel" id="f-phone" placeholder="+7 (_) _-_-_"/></div>
+        </div>
+        <div class="fg"><label>Компания / Организация</label><input type="text" id="f-company" placeholder="Необязательно"/></div>
+        <div class="fg">
+          <label>Вид работ</label>
+          <select id="f-service">
+            <option value="">Выберите услугу</option>
+            <option>Земляные работы / Котлован</option>
+            <option>Монолитные работы</option>
+            <option>Металлоконструкции</option>
+            <option>Сэндвич-панели</option>
+            <option>Промышленные полы (топпинг)</option>
+            <option>Кровельные работы</option>
+            <option>Инженерные сети</option>
+            <option>Комплексное строительство</option>
+          </select>
+        </div>
+        <div class="fg"><label>Описание объекта</label><textarea id="f-msg" placeholder="Тип объекта, площадь, адрес, сроки — любые детали ускорят расчёт"></textarea></div>
+        <button class="submit-btn" onclick="submitForm()">Отправить заявку →</button>
+        <p class="form-legal">Нажимая кнопку, вы соглашаетесь с обработкой персональных данных</p>
+        <div id="form-ok">✅ Заявка принята! Аслан свяжется с вами в течение 2 часов.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ ПОЧЕМУ МЫ ═══════════════ -->
+<section id="why">
+  <div class="inner">
+    <div class="s-label reveal"><div class="s-dash"></div><span class="s-tag">О компании</span></div>
+    <h2 class="reveal">Почему MB Group</h2>
+    <p class="s-desc reveal">Мы берём ответственность — не только за объём, но и за результат.</p>
+    <div class="why-grid">
+      <div class="wc reveal"><div class="wc-icon">📋</div><div class="wc-t">Полный цикл</div><p class="wc-d">Один подрядчик от котлована до инженерных сетей. Прямая ответственность без субподрядных цепочек.</p></div>
+      <div class="wc reveal"><div class="wc-icon">💬</div><div class="wc-t">Два прямых контакта</div><p class="wc-d">Аслан — коммерческие вопросы. Ернар — производство и технические вопросы. Без посредников.</p></div>
+      <div class="wc reveal"><div class="wc-icon">📐</div><div class="wc-t">Проектируем сами</div><p class="wc-d">Металлоконструкции и сэндвич-панели — от проекта до монтажа. Отдельный проектировщик не нужен.</p></div>
+      <div class="wc reveal"><div class="wc-icon">📄</div><div class="wc-t">Работаем официально</div><p class="wc-d">ТОО Megapolis Building Group. Договор, акты КС-2/КС-3 и исполнительная документация.</p></div>
+      <div class="wc reveal"><div class="wc-icon">🗓️</div><div class="wc-t">Сроки — закон</div><p class="wc-d">Сроки фиксируем в договоре. Еженедельный отчёт — вы знаете реальный прогресс в любой момент.</p></div>
+      <div class="wc reveal"><div class="wc-icon">📍</div><div class="wc-t">Алматы — наш город</div><p class="wc-d">Работаем в Алматы и регионе. Знаем местную специфику грунтов, поставщиков, логистику.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ КОНТАКТЫ ═══════════════ -->
+<section id="contacts">
+  <div class="inner">
+    <div class="s-label reveal"><div class="s-dash"></div><span class="s-tag">Контакты</span></div>
+    <h2 class="reveal">Свяжитесь с нами</h2>
+    <div class="contacts-grid reveal">
+      <div class="cc">
+        <div class="cc-label">Отдел продаж</div>
+        <div class="cc-row"><div class="cc-ico">👤</div><div><div class="cc-lbl">Менеджер</div><div class="cc-val">Аслан</div></div></div>
+        <div class="cc-row"><div class="cc-ico">📞</div><div><div class="cc-lbl">Телефон / WhatsApp</div><div class="cc-val"><a href="tel:+77474095664">+7 (747) 409-56-64</a></div></div></div>
+      </div>
+      <div class="cc">
+        <div class="cc-label">Производство</div>
+        <div class="cc-row"><div class="cc-ico">👤</div><div><div class="cc-lbl">Руководитель производства</div><div class="cc-val">Ернар</div></div></div>
+        <div class="cc-row"><div class="cc-ico">📞</div><div><div class="cc-lbl">Телефон / WhatsApp</div><div class="cc-val"><a href="tel:+77015157791">+7 (701) 515-77-91</a></div></div></div>
+      </div>
+      <div class="cc">
+        <div class="cc-label">Адрес и соцсети</div>
+        <div class="cc-row"><div class="cc-ico">📍</div><div><div class="cc-lbl">Офис</div><div class="cc-val">г. Алматы, Турксибский р-н, ул. Федосеева 38а</div></div></div>
+        <!-- ✏️ Замените @mbgroup.kz на ваш реальный ник в Instagram -->
+        <div class="cc-row"><div class="cc-ico">📸</div><div><div class="cc-lbl">Instagram</div><div class="cc-val"><a href="https://instagram.com/mbgroup.kz" target="_blank">@mbgroup.kz</a></div></div></div>
+        <!-- ✏️ Замените @mbgroup.kz на ваш реальный ник в TikTok -->
+        <div class="cc-row"><div class="cc-ico">🎵</div><div><div class="cc-lbl">TikTok</div><div class="cc-val"><a href="https://tiktok.com/@mbgroup.kz" target="_blank">@mbgroup.kz</a></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ ФУТЕР ═══════════════ -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo-text">MB <span>GROUP</span></div>
+      <div class="footer-sub">ТОО Megapolis Building Group · г. Алматы</div>
+    </div>
+    <div class="f-links">
+      <a href="#services">Услуги</a>
+      <a href="#process">Процесс</a>
+      <a href="#portfolio">Проекты</a>
+      <a href="#contacts">Контакты</a>
+    </div>
+    <div class="f-copy">© 2024 ТОО Megapolis Building Group. Все права защищены.</div>
+  </div>
+</footer>
+
+<!-- ═══════════════ ЛАЙТБОКС ═══════════════ -->
+<div id="lightbox">
+  <button id="lb-close" onclick="closeLightbox()">×</button>
+  <button id="lb-prev" onclick="lbPrev()">&#8592;</button>
+  <img id="lb-img" src="" alt=""/>
+  <button id="lb-next" onclick="lbNext()">&#8594;</button>
+</div>
+
+<script>
+  /* ── Бургер ── */
+  function toggleMenu(){document.getElementById('navLinks').classList.toggle('open')}
+
+  /* ── Reveal при скролле ── */
+  const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('v')}),{threshold:.08});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+  /* ── Карусель ── */
+  let cur=0;
+  const slides=document.querySelectorAll('.carousel-slide');
+  const track=document.getElementById('carouselTrack');
+  const dots=document.querySelectorAll('.dot');
+  function goSlide(n){
+    cur=Math.max(0,Math.min(n,slides.length-1));
+    track.style.transform=translateX(-${cur*100}%);
+    dots.forEach((d,i)=>d.classList.toggle('active',i===cur));
+  }
+  function nextSlide(){goSlide(cur<slides.length-1?cur+1:0)}
+  function prevSlide(){goSlide(cur>0?cur-1:slides.length-1)}
+  /* свайп */
+  let ts=0;
+  track.addEventListener('touchstart',e=>{ts=e.touches[0].clientX});
+  track.addEventListener('touchend',e=>{const d=e.changedTouches[0].clientX-ts;if(Math.abs(d)>50){d<0?nextSlide():prevSlide()}});
+
+  /* ── Фильтр портфолио ── */
+  function filterPortfolio(cat,btn){
+    document.querySelectorAll('.pf-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.photo-card').forEach(c=>{
+      c.style.opacity=cat==='all'||c.dataset.cat===cat?'1':'0.25';
+    });
+  }
+
+  /* ── Лайтбокс ── */
+  const imgs=[];
+  document.querySelectorAll('.photo-card img').forEach(img=>imgs.push(img.src));
+  let lbIdx=0;
+  function openLightbox(i){
+    if(!imgs[i]){return}
+    lbIdx=i;document.getElementById('lb-img').src=imgs[i];
+    document.getElementById('lightbox').classList.add('open');
+  }
+  function closeLightbox(){document.getElementById('lightbox').classList.remove('open')}
+  function lbPrev(){lbIdx=lbIdx>0?lbIdx-1:imgs.length-1;document.getElementById('lb-img').src=imgs[lbIdx]}
+  function lbNext(){lbIdx=lbIdx<imgs.length-1?lbIdx+1:0;document.getElementById('lb-img').src=imgs[lbIdx]}
+  document.getElementById('lightbox').addEventListener('click',function(e){if(e.target===this)closeLightbox()});
+
+  /* ── Форма ── */
+  function submitForm(){
+    const n=document.getElementById('f-name').value.trim();
+    const p=document.getElementById('f-phone').value.trim();
+    if(!n||!p){alert('Пожалуйста, укажите имя и телефон');return}
+    document.getElementById('form-ok').style.display='block';
+    ['f-name','f-phone','f-company','f-service','f-msg'].forEach(id=>document.getElementById(id).value='');
+  }
+</script>
+</body>
+</html>
