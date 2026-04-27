@@ -50,6 +50,13 @@
     .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;margin-left:auto}
     .burger span{display:block;width:22px;height:2px;background:var(--text)}
 
+    /* ══════════ ТЕГИ УСЛУГ В ГЕРОЕ ══════════ */
+    .hero-services{margin-top:52px}
+    .hs-label{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+    .hs-tags{display:flex;flex-wrap:wrap;gap:10px}
+    .hs-tag{font-size:12px;font-weight:600;color:var(--text);background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:4px;padding:8px 14px;letter-spacing:.3px;transition:border-color .2s,color .2s}
+    .hs-tag:hover{border-color:var(--gold);color:var(--gold)}
+
     /* ══════════ ГЕРОЙ ══════════ */
     #hero{min-height:100vh;display:flex;align-items:center;padding:120px 40px 80px;position:relative;overflow:hidden}
     .hero-bg{position:absolute;inset:0;
@@ -75,11 +82,6 @@
     .btn-gold:hover{background:var(--gold2);transform:translateY(-2px)}
     .btn-outline{background:transparent;color:var(--text);border:1.5px solid var(--border)}
     .btn-outline:hover{border-color:var(--gold);color:var(--gold)}
-    .hero-counters{display:flex;gap:0;margin-top:72px;flex-wrap:wrap}
-    .counter{padding:0 44px 0 0;border-right:1px solid var(--border);margin-right:44px}
-    .counter:last-child{border-right:none}
-    .counter-n{font-size:44px;font-weight:900;color:var(--gold);line-height:1;letter-spacing:-1px}
-    .counter-l{font-size:11px;color:var(--muted);margin-top:4px;font-weight:500;letter-spacing:.3px}
 
     /* ══════════ ОБЩИЕ СЕКЦИИ ══════════ */
     section{padding:96px 40px}
@@ -271,31 +273,26 @@
   <div class="hero-inner">
     <div class="eyebrow">
       <div class="eyebrow-dash"></div>
-      <span class="eyebrow-txt">Алматы · Строительный подрядчик полного цикла</span>
+      <span class="eyebrow-txt">Строительный подрядчик полного цикла</span>
     </div>
     <h1>Строим.<br/><em>Сдаём в срок.</em><br/>Берём ответственность.</h1>
     <p class="hero-sub">
-      <b>Megapolis Building Group</b> — земляные работы, монолит,
-      металлоконструкции, сэндвич-панели, промышленные полы,
-      кровля и инженерные сети.
+      <b>Один подрядчик — весь объект.</b> Берём промышленные и коммерческие объекты под ключ: фиксируем цену и сроки в договоре, отчитываемся еженедельно, сдаём с документацией.
     </p>
     <div class="cta-row">
       <a href="#calc" class="btn btn-gold">Получить расчёт</a>
       <a href="#portfolio" class="btn btn-outline">Наши проекты</a>
     </div>
-    <div class="hero-counters">
-      <div class="counter">
-        <!-- ✏️ Замените на реальные цифры -->
-        <div class="counter-n">7+</div>
-        <div class="counter-l">видов работ</div>
-      </div>
-      <div class="counter">
-        <div class="counter-n">Алматы</div>
-        <div class="counter-l">город работ</div>
-      </div>
-      <div class="counter">
-        <div class="counter-n">КС-2</div>
-        <div class="counter-l">официальные акты</div>
+    <div class="hero-services">
+      <div class="hs-label">Виды работ:</div>
+      <div class="hs-tags">
+        <span class="hs-tag">⛏ Земляные работы</span>
+        <span class="hs-tag">🏗 Монолитные работы</span>
+        <span class="hs-tag">🔩 Металлоконструкции</span>
+        <span class="hs-tag">🧱 Сэндвич-панели</span>
+        <span class="hs-tag">🏭 Промышленные полы</span>
+        <span class="hs-tag">🏠 Кровельные работы</span>
+        <span class="hs-tag">⚡ Инженерные сети</span>
       </div>
     </div>
   </div>
@@ -306,7 +303,7 @@
   <div class="inner">
     <div class="s-label reveal"><div class="s-dash"></div><span class="s-tag">Что мы делаем</span></div>
     <h2 class="reveal">Наши услуги</h2>
-    <p class="s-desc reveal">Один подрядчик — весь объект. От котлована до инженерных сетей.</p>
+    <p class="s-desc reveal">Берём объект целиком — вам не нужно координировать несколько подрядчиков и делить между ними ответственность.</p>
     <div class="svc-grid">
       <div class="svc reveal">
         <div class="svc-num">01</div>
@@ -600,7 +597,7 @@
   <div class="inner">
     <div class="s-label reveal"><div class="s-dash"></div><span class="s-tag">О компании</span></div>
     <h2 class="reveal">Почему MB Group</h2>
-    <p class="s-desc reveal">Мы берём ответственность — не только за объём, но и за результат.</p>
+    <p class="s-desc reveal">Работаем с застройщиками, девелоперами и промышленными предприятиями — берём на себя весь объём и полную ответственность за результат.</p>
     <div class="why-grid">
       <div class="wc reveal"><div class="wc-icon">📋</div><div class="wc-t">Полный цикл</div><p class="wc-d">Один подрядчик от котлована до инженерных сетей. Прямая ответственность без субподрядных цепочек.</p></div>
       <div class="wc reveal"><div class="wc-icon">💬</div><div class="wc-t">Два прямых контакта</div><p class="wc-d">Аслан — коммерческие вопросы. Ернар — производство и технические вопросы. Без посредников.</p></div>
