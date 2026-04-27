@@ -214,7 +214,7 @@
 
     /* ══════════ АНИМАЦИИ ══════════ */
     @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
-    .reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+    .reveal{opacity:1;transform:translateY(0)}
     .reveal.v{opacity:1;transform:translateY(0)}
 
     /* ══════════ ЛАЙТБОКС ══════════ */
@@ -612,9 +612,9 @@
 <!-- ═══════════════ КОНТАКТЫ ═══════════════ -->
 <section id="contacts">
   <div class="inner">
-    <div class="s-label reveal"><div class="s-dash"></div><span class="s-tag">Контакты</span></div>
-    <h2 class="reveal">Свяжитесь с нами</h2>
-    <div class="contacts-grid reveal">
+    <div class="s-label"><div class="s-dash"></div><span class="s-tag">Контакты</span></div>
+    <h2>Свяжитесь с нами</h2>
+    <div class="contacts-grid">
       <div class="cc">
         <div class="cc-label">Отдел продаж</div>
         <div class="cc-row"><div class="cc-ico">👤</div><div><div class="cc-lbl">Менеджер</div><div class="cc-val">Аслан</div></div></div>
@@ -628,9 +628,7 @@
       <div class="cc">
         <div class="cc-label">Адрес и соцсети</div>
         <div class="cc-row"><div class="cc-ico">📍</div><div><div class="cc-lbl">Офис</div><div class="cc-val">г. Алматы, Турксибский р-н, ул. Федосеева 38а</div></div></div>
-        <!-- ✏️ Замените @mbgroup.kz на ваш реальный ник в Instagram -->
         <div class="cc-row"><div class="cc-ico">📸</div><div><div class="cc-lbl">Instagram</div><div class="cc-val"><a href="https://instagram.com/mbgroup.kz" target="_blank">@mbgroup.kz</a></div></div></div>
-        <!-- ✏️ Замените @mbgroup.kz на ваш реальный ник в TikTok -->
         <div class="cc-row"><div class="cc-ico">🎵</div><div><div class="cc-lbl">TikTok</div><div class="cc-val"><a href="https://tiktok.com/@mbgroup.kz" target="_blank">@mbgroup.kz</a></div></div></div>
       </div>
     </div>
@@ -667,7 +665,7 @@
   function toggleMenu(){document.getElementById('navLinks').classList.toggle('open')}
 
   /* ── Reveal при скролле ── */
-  const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('v')}),{threshold:.08});
+  const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('v')}),{threshold:.01});
   document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 
   /* ── Карусель ── */
