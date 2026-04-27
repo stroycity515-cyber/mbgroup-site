@@ -32,8 +32,8 @@
         display:flex;align-items:center;padding:0 40px;gap:36px}
     .logo{text-decoration:none;display:flex;align-items:center;gap:12px;flex-shrink:0}
     .logo-mark{
-      width:42px;height:42px;background:url('MB GROUP.png');
-/*      border-radius:4px;display:flex;align-items:center;justify-content:center;
+      width:42px;height:42px;background:var(--gold);
+      border-radius:4px;display:flex;align-items:center;justify-content:center;
       font-family:'Montserrat',sans-serif;font-size:13px;font-weight:900;
       color:var(--navy);letter-spacing:0;line-height:1;flex-shrink:0;
       position:relative;overflow:hidden
@@ -48,7 +48,7 @@
     .nav-cta{background:var(--gold);color:var(--navy);text-decoration:none;font-size:12px;font-weight:800;letter-spacing:.5px;padding:10px 24px;border-radius:4px;white-space:nowrap;transition:background .2s;flex-shrink:0}
     .nav-cta:hover{background:var(--gold2)}
     .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;margin-left:auto}
-    .burger span{display:block;width:22px;height:2px;background:var(--text)/*}
+    .burger span{display:block;width:22px;height:2px;background:var(--text)}
 
     /* ══════════ ГЕРОЙ ══════════ */
     #hero{min-height:100vh;display:flex;align-items:center;padding:120px 40px 80px;position:relative;overflow:hidden}
@@ -246,11 +246,7 @@
 <!-- ═══════════════ НАВИГАЦИЯ ═══════════════ -->
 <nav>
   <a href="#hero" class="logo">
-    <div class="logo-mark">MB</div>
-    <div class="logo-text">
-      <span class="logo-text-main">MB GROUP</span>
-      <span class="logo-text-sub">Megapolis Building</span>
-    </div>
+    <img src="MB%20GROUP.png" alt="MB Group" style="height:46px;width:auto;display:block;">
   </a>
   <ul class="nav-links" id="navLinks">
     <li><a href="#services">Услуги</a></li>
@@ -445,38 +441,29 @@
         <!-- ═══ СЛАЙД 1 ═══
              ✏️ КАК ДОБАВИТЬ ФОТО:
              Замените <div class="photo-placeholder">...</div>
-             на <img src="MB Group.png" alt="описание">
+             на <img src="ваше-фото.jpg" alt="описание">
              Все 3 фото в одном слайде — листаются стрелками
         ═══════════════════════════════════════ -->
         <div class="carousel-slide" id="slide-0">
 
-          <div class="photo-card" data-cat="mono" onclick="openLightbox(0)">
-            <div class="photo-placeholder">
-              <span class="ph-icon">📸</span>
-              <span class="ph-label">Добавьте фото<br/>котлована</span>
-            </div>
+          <div class="photo-card" data-cat="earth" onclick="openLightbox(0)">
+            <img src="котлован.jpg" alt="Разработка котлована">
             <div class="photo-overlay">
               <div class="photo-meta"><span>Земляные работы</span>Разработка котлована</div>
             </div>
           </div>
 
           <div class="photo-card" data-cat="mono" onclick="openLightbox(1)">
-            <div class="photo-placeholder">
-              <span class="ph-icon">📸</span>
-              <span class="ph-label">Добавьте фото<br/>армирования</span>
-            </div>
+            <img src="монолит.jpg" alt="Монолитные работы">
             <div class="photo-overlay">
               <div class="photo-meta"><span>Монолитные работы</span>Армирование плиты</div>
             </div>
           </div>
 
-          <div class="photo-card" data-cat="mono" onclick="openLightbox(2)">
-            <div class="photo-placeholder">
-              <span class="ph-icon">📸</span>
-              <span class="ph-label">Добавьте фото<br/>заливки бетона</span>
-            </div>
+          <div class="photo-card" data-cat="metal" onclick="openLightbox(2)">
+            <img src="металлоконструкции.jpg" alt="Металлоконструкции">
             <div class="photo-overlay">
-              <div class="photo-meta"><span>Монолитные работы</span>Заливка перекрытия</div>
+              <div class="photo-meta"><span>Металлоконструкции</span>Монтаж каркаса</div>
             </div>
           </div>
 
@@ -485,30 +472,21 @@
         <div class="carousel-slide" id="slide-1">
 
           <div class="photo-card" data-cat="metal" onclick="openLightbox(3)">
-            <div class="photo-placeholder">
-              <span class="ph-icon">📸</span>
-              <span class="ph-label">Добавьте фото<br/>металлоконструкций</span>
-            </div>
+            <img src="сэндвич.jpg" alt="Сэндвич-панели">
             <div class="photo-overlay">
-              <div class="photo-meta"><span>Металлоконструкции</span>Монтаж каркаса</div>
+              <div class="photo-meta"><span>Сэндвич-панели</span>Монтаж фасада</div>
             </div>
           </div>
 
-          <div class="photo-card" data-cat="roof" onclick="openLightbox(4)">
-            <div class="photo-placeholder">
-              <span class="ph-icon">📸</span>
-              <span class="ph-label">Добавьте фото<br/>кровельных работ</span>
-            </div>
+          <div class="photo-card" data-cat="floor" onclick="openLightbox(4)">
+            <img src="полы.jpg" alt="Промышленные полы">
             <div class="photo-overlay">
-              <div class="photo-meta"><span>Кровля</span>Монтаж кровли</div>
+              <div class="photo-meta"><span>Промышленные полы</span>Устройство полов</div>
             </div>
           </div>
 
           <div class="photo-card" data-cat="floor" onclick="openLightbox(5)">
-            <div class="photo-placeholder">
-              <span class="ph-icon">📸</span>
-              <span class="ph-label">Добавьте фото<br/>промышленных полов</span>
-            </div>
+            <img src="топпинг.jpg" alt="Топпинг-пол">
             <div class="photo-overlay">
               <div class="photo-meta"><span>Промышленные полы</span>Топпинг-пол</div>
             </div>
@@ -519,32 +497,23 @@
         <div class="carousel-slide" id="slide-2">
 
           <div class="photo-card" data-cat="earth" onclick="openLightbox(6)">
-            <div class="photo-placeholder">
-              <span class="ph-icon">📸</span>
-              <span class="ph-label">Добавьте фото<br/>земляных работ</span>
+            <img src="сети.png" alt="Инженерные сети">
+            <div class="photo-overlay">
+              <div class="photo-meta"><span>Инженерные сети</span>Монтаж сетей</div>
             </div>
+          </div>
+
+          <div class="photo-card" data-cat="earth" onclick="openLightbox(7)">
+            <img src="котлован.jpg" alt="Земляные работы">
             <div class="photo-overlay">
               <div class="photo-meta"><span>Земляные работы</span>Котлован</div>
             </div>
           </div>
 
-          <div class="photo-card" data-cat="metal" onclick="openLightbox(7)">
-            <div class="photo-placeholder">
-              <span class="ph-icon">📸</span>
-              <span class="ph-label">Добавьте фото<br/>сэндвич-панелей</span>
-            </div>
-            <div class="photo-overlay">
-              <div class="photo-meta"><span>Сэндвич-панели</span>Монтаж фасада</div>
-            </div>
-          </div>
-
           <div class="photo-card" data-cat="mono" onclick="openLightbox(8)">
-            <div class="photo-placeholder">
-              <span class="ph-icon">📸</span>
-              <span class="ph-label">Добавьте фото<br/>готового объекта</span>
-            </div>
+            <img src="монолит.jpg" alt="Монолитные работы">
             <div class="photo-overlay">
-              <div class="photo-meta"><span>Готовый объект</span>Административное здание</div>
+              <div class="photo-meta"><span>Монолитные работы</span>Готовый объект</div>
             </div>
           </div>
 
@@ -565,13 +534,7 @@
       </div>
     </div>
 
-    <!-- Инструкция для владельца -->
-    <div class="portfolio-note">
-      <b>✏️ Как добавить ваши фотографии:</b> Откройте файл в текстовом редакторе, найдите строки
-      <code style="background:rgba(255,255,255,.07);padding:1px 6px;border-radius:3px">photo-placeholder</code> и замените их на
-      <code style="background:rgba(255,255,255,.07);padding:1px 6px;border-radius:3px">&lt;img src="ваше-фото.jpg" alt="описание"&gt;</code>.
-      Фото должны лежать рядом с файлом index.html. Можно добавить сколько угодно слайдов.
-    </div>
+
   </div>
 </section>
 
