@@ -600,11 +600,9 @@
     <p class="s-desc reveal">Работаем с застройщиками, девелоперами и промышленными предприятиями — берём на себя весь объём и полную ответственность за результат.</p>
     <div class="why-grid">
       <div class="wc reveal"><div class="wc-icon">📋</div><div class="wc-t">Полный цикл</div><p class="wc-d">Один подрядчик от котлована до инженерных сетей. Прямая ответственность без субподрядных цепочек.</p></div>
-      <div class="wc reveal"><div class="wc-icon">💬</div><div class="wc-t">Два прямых контакта</div><p class="wc-d">Аслан — коммерческие вопросы. Ернар — производство и технические вопросы. Без посредников.</p></div>
-      <div class="wc reveal"><div class="wc-icon">📐</div><div class="wc-t">Проектируем сами</div><p class="wc-d">Металлоконструкции и сэндвич-панели — от проекта до монтажа. Отдельный проектировщик не нужен.</p></div>
       <div class="wc reveal"><div class="wc-icon">📄</div><div class="wc-t">Работаем официально</div><p class="wc-d">ТОО Megapolis Building Group. Договор, акты КС-2/КС-3 и исполнительная документация.</p></div>
       <div class="wc reveal"><div class="wc-icon">🗓️</div><div class="wc-t">Сроки — закон</div><p class="wc-d">Сроки фиксируем в договоре. Еженедельный отчёт — вы знаете реальный прогресс в любой момент.</p></div>
-      <div class="wc reveal"><div class="wc-icon">📍</div><div class="wc-t">Алматы — наш город</div><p class="wc-d">Работаем в Алматы и регионе. Знаем местную специфику грунтов, поставщиков, логистику.</p></div>
+      <div class="wc reveal"><div class="wc-icon">🤝</div><div class="wc-t">Проверенные специалисты</div><p class="wc-d">На каждом направлении работают люди с многолетним опытом на реальных объектах.</p></div>
     </div>
   </div>
 </section>
@@ -675,7 +673,7 @@
   const dots=document.querySelectorAll('.dot');
   function goSlide(n){
     cur=Math.max(0,Math.min(n,slides.length-1));
-    track.style.transform=translateX(-${cur*100}%);
+    track.style.transform=`translateX(-${cur*100}%)`;
     dots.forEach((d,i)=>d.classList.toggle('active',i===cur));
   }
   function nextSlide(){goSlide(cur<slides.length-1?cur+1:0)}
