@@ -707,10 +707,29 @@
   document.getElementById('lightbox').addEventListener('click',function(e){if(e.target===this)closeLightbox()});
 
   /* ── Форма ── */
-  function submitForm(){
+  async function submitForm(){
     const n=document.getElementById('f-name').value.trim();
     const p=document.getElementById('f-phone').value.trim();
+    const c=document.getElementById('f-company').value.trim();
+    const s=document.getElementById('f-service').value;
+    const m=document.getElementById('f-msg').value.trim();
     if(!n||!p){alert('Пожалуйста, укажите имя и телефон');return}
+
+    /* Formspree */
+    fetch('https://formspree.io/f/xdayrwgl',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify({name:n,phone:p,company:c,service:s,message:m})
+    });
+
+    /* Telegram */
+    const text=`📋 *Новая заявка с сайта*\n\n👤 *Имя:* ${n}\n📞 *Телефон:* ${p}${c?'\n🏢 *Компания:* '+c:''}${s?'\n🔧 *Услуга:* '+s:''}${m?'\n💬 *Сообщение:* '+m:''}`;
+    fetch(`https://api.telegram.org/bot8568880509:AAFfmlDUGuoU0y-UFHKbSkIPT_RCkSn5Acg/sendMessage`,{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({chat_id:417248192,text,parse_mode:'Markdown'})
+    });
+
     document.getElementById('form-ok').style.display='block';
     ['f-name','f-phone','f-company','f-service','f-msg'].forEach(id=>document.getElementById(id).value='');
   }
